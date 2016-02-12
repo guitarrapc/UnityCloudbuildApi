@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encoding.cs" />
     <Compile Include="IO\Swagger\Api\Api\BuildsApi.cs" />
     <Compile Include="IO\Swagger\Api\Api\BuildtargetsApi.cs" />
     <Compile Include="IO\Swagger\Api\Api\ConfigApi.cs" />

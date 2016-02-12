@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace IO.Swagger.Client
+namespace UnityCloudBuildApi.IO.Swagger.Client
 {
     /// <summary>
     /// Represents a set of configuration settings

@@ -11,7 +11,7 @@ using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace IO.Swagger.Client
+namespace UnityCloudBuildApi.IO.Swagger.Client
 {
     /// <summary>
     /// API client is mainly responible for making the HTTP call to the API backend.

@@ -1,6 +1,6 @@
 using System;
 
-namespace IO.Swagger.Client
+namespace UnityCloudBuildApi.IO.Swagger.Client
 {
     /// <summary>
     /// API Exception

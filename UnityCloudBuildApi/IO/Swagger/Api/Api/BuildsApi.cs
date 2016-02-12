@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using UnityCloudBuildApi.IO.Swagger.Client;
+using UnityCloudBuildApi.IO.Swagger.Model;
+using static UnityCloudBuildApi.Encode;
 
-namespace IO.Swagger.Api
+namespace UnityCloudBuildApi.IO.Swagger.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
