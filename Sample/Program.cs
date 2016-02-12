@@ -19,22 +19,82 @@ namespace Sample
             var client = new ApiClient("https://build-api.cloud.unity3d.com/api/v1");
             var config = new Configuration(client, accessToken: apiKey);
 
+            var targetProject = TestProjectApi(config, orgId).Result;
             var targetBuilds = TestBuildTargetApi(config, orgId, projectId).Result;
             var buildOperation = TestBuildOperationApi(config, orgId, projectId, targetBuilds);
         }
+
+
+        static async Task<InlineResponse2001> TestProjectApi(Configuration config, string orgId)
+        {
+            #region Project Api
+
+            // Add Project
+            var projectApi = new UnityCloudBuildApi.IO.Swagger.Api.ProjectsApi(config);
+            var options = new Options
+            {
+                Name = "Test",
+                Settings = new OrgsorgidprojectsSettings
+                {
+                    Scm = new OrgsorgidprojectsSettingsScm
+                    {
+                        Url = "https://github.com/username/repositoryname.git",
+                        Type = "git",
+                        User = "github user name",
+                        Pass = "github api token",
+                    },
+                },
+            };
+            var addProject = await projectApi.AddProjectAsync(orgId, options);
+            var hoge = addProject.ToJson();
+
+            // Get Project
+            var proejct = await projectApi.GetBillingPlansAsync(orgId, addProject.Projectid);
+            var fuga = proejct.ToJson();
+
+            // List Project
+            var listProject = await projectApi.ListProjectsForOrgAsync(orgId);
+            var piyo = listProject.Select(x => x.ToJson()).ToArray();
+
+            return addProject;
+
+            #endregion
+        }
+
 
         static async Task<List<InlineResponse2003>> TestBuildTargetApi(Configuration config, string orgId, string projectId)
         {
             #region BuildTarget Api
 
-            // Get BuildTargets for list BuildTargetId
+            // Add Build Target
             var buildTargetApi = new UnityCloudBuildApi.IO.Swagger.Api.BuildtargetsApi(config);
+            var option2 = new Options2
+            {
+                Platform = "android",
+                Name = "Test",
+                Enabled = false,
+                Settings = new OrgsorgidprojectsprojectidbuildtargetsSettings
+                {
+                    Platform = new OrgsorgidprojectsprojectidbuildtargetsSettingsPlatform { BundleId = "com.hoge.fuga" },
+                    AutoBuild = true,
+                    Scm = new OrgsorgidprojectsprojectidbuildtargetsSettingsScm
+                    {
+                        Branch = "master",
+                        Type = "git"
+                    },
+                    UnityVersion = "latest",
+                },
+            };
+            var newBuildTarget = await buildTargetApi.AddBuildTargetAsync(orgId, projectId, option2);
+            var hoge = newBuildTarget.ToJson();
+
+            // Get BuildTargets for list BuildTargetId
             var buildTargets = await buildTargetApi.GetBuildTargetsAsync(orgId, projectId);
-            var hoge = buildTargets.Select(x => x.ToJson()).ToArray();
+            var fuga = buildTargets.Select(x => x.ToJson()).ToArray();
 
             // Get BuildTarget Info
             var buildTarget = await buildTargetApi.GetBuildTargetAsync(orgId, projectId, buildTargets.FirstOrDefault().Buildtargetid);
-            var fuga = buildTarget.ToJson();
+            var piyo = buildTarget.ToJson();
 
             #endregion
 
@@ -51,7 +111,7 @@ namespace Sample
             var piyo = build.Select(x => x.ToJson());
 
             // Start Build
-            var option = new UnityCloudBuildApi.IO.Swagger.Model.Options4
+            var option = new Options4
             {
                 Clean = false,
                 Delay = 0,
