@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3325679C-81B6-42D9-91D3-789354195716}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityCloudBuildApi</RootNamespace>
+    <AssemblyName>UnityCloudBuildApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IO\Swagger\Api\Api\BuildsApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\BuildtargetsApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\ConfigApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\CredentialsApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\OrgsApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\ProjectsApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\SharesApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\UserdevicesApi.cs" />
+    <Compile Include="IO\Swagger\Api\Api\UsersApi.cs" />
+    <Compile Include="IO\Swagger\Api\Client\ApiClient.cs" />
+    <Compile Include="IO\Swagger\Api\Client\ApiException.cs" />
+    <Compile Include="IO\Swagger\Api\Client\ApiResponse.cs" />
+    <Compile Include="IO\Swagger\Api\Client\Configuration.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse200.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2001.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse20010.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse20011.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse20012.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse20013.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse20014.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2002.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2003.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2004.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2005.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2006.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2007.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2008.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse2009.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse200Billing.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse200BillingDetails.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse200Effective.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse200Upgrade.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse202.cs" />
+    <Compile Include="IO\Swagger\Api\Model\InlineResponse404.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options1.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options2.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options3.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options4.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options5.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options6.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options7.cs" />
+    <Compile Include="IO\Swagger\Api\Model\Options8.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidauditlogLines.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsBuilds.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentials.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentials1.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentials1Signing.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentialsSigning.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentialsSigningCredentialResourceRef.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentialsSigningCredentialResourceRefCertificate.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentialsSigningCredentialResourceRefKeystore.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsCredentialsSigningCredentialResourceRefProvisioningProfile.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsProjectVersion.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettings.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsAdvanced.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsAdvancedUnity.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsAdvancedUnityAssetBundles.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsAdvancedUnityPlayerExporter.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsAdvancedUnityPlayerSettings.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsAdvancedUnityPlayerSettingsAndroid.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsPlatform.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsSettingsScm.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsTestResults.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsprojectidbuildtargetsTestResultsIntegrationTests.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsSettings.cs" />
+    <Compile Include="IO\Swagger\Api\Model\OrgsorgidprojectsSettingsScm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
